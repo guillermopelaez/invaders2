@@ -51,7 +51,7 @@ public class World {
         Rectangle shipRectangle = new Rectangle(ship.position.x, ship.position.y, ship.frame.getRegionWidth(), ship.frame.getRegionHeight());
 
         for(AlienShoot shoot: alienArmy.shoots){
-            Rectangle shootRectangle = new Rectangle(shoot.position.x, shoot.position.y, shoot.frame.getRegionWidth(), shoot.frame.getRegionHeight());
+            Rectangle shootRectangle = new Rectangle(shoot.posicion.x, shoot.posicion.y, shoot.frame.getRegionWidth(), shoot.frame.getRegionHeight());
 
             if (Intersector.overlaps(shootRectangle, shipRectangle)) {
                 ship.damage();
@@ -85,7 +85,7 @@ public class World {
         }
 
         for(AlienShoot shoot: alienArmy.shoots){
-            if(shoot.position.y < 0){
+            if(shoot.posicion.y < 0){
                 shoot.remove();
             }
         }

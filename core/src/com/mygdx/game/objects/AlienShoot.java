@@ -10,7 +10,7 @@ public class AlienShoot {
         SHOOTING, TO_REMOVE
     }
 
-    Vector2 position;
+    Vector2 posicion;
 
     float stateTime;
     State state;
@@ -18,19 +18,19 @@ public class AlienShoot {
 
     TextureRegion frame;
 
-    AlienShoot(Vector2 position){
-        this.position = position;
+    AlienShoot(Vector2 posicion){
+        this.posicion = posicion;
         state = State.SHOOTING;
     }
 
     void render(SpriteBatch batch){
-        batch.draw(frame, position.x, position.y);
+        batch.draw(frame, posicion.x, posicion.y);
     }
 
     public void update(float delta, Assets assets) {
         stateTime += delta;
 
-        position.y -= speed;
+        posicion.y -= speed;
 
         frame = assets.alienshoot.getKeyFrame(stateTime, true);
     }
